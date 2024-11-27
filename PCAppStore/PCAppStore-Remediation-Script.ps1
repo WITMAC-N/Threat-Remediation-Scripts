@@ -13,6 +13,16 @@ if ($process) {
     $process | Stop-Process -Force -ErrorAction SilentlyContinue
     Start-Sleep -Seconds 2 
 }
+$process = Get-Process AppStoreDeskTool -ErrorAction SilentlyContinue
+if ($process) { 
+    $process | Stop-Process -Force -ErrorAction SilentlyContinue
+    Start-Sleep -Seconds 2 
+}
+$process = Get-Process PCAppStoreSvc -ErrorAction SilentlyContinue
+if ($process) { 
+    $process | Stop-Process -Force -ErrorAction SilentlyContinue
+    Start-Sleep -Seconds 2 
+}
 Start-Sleep -Seconds 2
 
 $user_list = Get-Item C:\users\* | Select-Object Name -ExpandProperty Name
