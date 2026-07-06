@@ -9,6 +9,7 @@ foreach ($username in $user_list) {
     if ($username -notlike "*Public*") {
         $paths = @(
             "C:\Users\$username\AppData\Local\Easy2Convert"
+            "C:\Users\$username\AppData\Roaming\Easy2Convert"
         )
         foreach ($path in $paths) {
             if (Test-Path -Path $path) {
